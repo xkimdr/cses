@@ -12,8 +12,10 @@ public class App {
     }
 
     private static void weirdAlgorithm(long n) {
+        StringBuilder s = new StringBuilder();
         while (n != 1) {
-            System.out.print(n + " ");
+            s.append(n);
+            s.append(" ");
 
             if (n % 2 == 0) {
                 n /= 2;
@@ -21,7 +23,7 @@ public class App {
                 n = n * 3 + 1;
             }
         }
-
-        System.out.println(n);
+        s.append(n);
+        System.out.println(s.toString());
     }
 }
