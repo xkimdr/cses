@@ -1,0 +1,11 @@
+{
+  "name": "missing-number-nodejs",
+  "version": "1.0.0",
+  "description": "cses missing number",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amit Srivastava",
+  "license": "GPL-3.0-or-later"
+}
