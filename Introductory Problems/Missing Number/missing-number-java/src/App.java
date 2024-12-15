@@ -1,19 +1,22 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner scan = new Scanner(System.in);
-        final long n = Long.valueOf(scan.nextLine());
 
-        String s = scan.nextLine();
+        BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 
-        scan.close();
+        final long n = Long.parseLong(buff.readLine());
 
         final long sum1 = (n * (n + 1)) / 2;
 
+        StringTokenizer st = new StringTokenizer(buff.readLine());
+
         long sum2 = 0;
-        for (String str : s.split(" ")) {
-            sum2 += Long.valueOf(str);
+
+        while (st.hasMoreTokens()) {
+            sum2 += Long.parseLong(st.nextToken());
         }
 
         System.out.println(sum1 - sum2);
