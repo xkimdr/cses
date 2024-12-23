@@ -1,32 +1,17 @@
-const readline = require("readline");
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
 
-const input = () => {
-  const r = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
+process.stdin.on('data', (data) => {
+  let n = data.trim();
+  process.stdin.pause();
 
-  return new Promise((resolve) => {
-    r.question("", (x) => {
-      r.close();
-      resolve(x);
-    });
-  });
-};
+  const result = [];
+  result.push(n);
 
-const algo = (n) => {
-  const arr = [];
-  while (n !== 1) {
-    arr.push(n);
-    n = n % 2 === 0 ? n / 2 : n * 3 + 1;
+  while (n != 1) {
+    n = (n % 2 == 0) ? (n / 2) : (n * 3 + 1);
+    result.push(n);
   }
-  arr.push(1);
-  return arr;
-};
 
-const main = async () => {
-  const n = parseInt(await input());
-  console.log(algo(n).join(" "));
-};
-
-main();
+  console.log(result.join(" "));
+});
